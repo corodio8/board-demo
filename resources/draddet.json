@@ -1,0 +1,28 @@
+{"frames": {
+
+"red_circle":
+{
+	"frame": {"x":37,"y":2,"w":32,"h":33},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":33},
+	"sourceSize": {"w":32,"h":33}
+},
+"blue_square":
+{
+	"frame": {"x":2,"y":2,"w":33,"h":33},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":33},
+	"sourceSize": {"w":33,"h":33}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "draddet.png",
+	"format": "RGBA8888",
+	"size": {"w":71,"h":37},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:23318f7f15eff113b3c3799e1c81ae08:e5f2811a7e223d1f6082653e89854fa8:0d97ce0c5fa86d310d020bfe09835b76$"
+}
+}
