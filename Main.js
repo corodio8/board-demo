@@ -8,16 +8,14 @@ function Main() {
   );
 
   //Background Sprites
-  var backSprite = PIXI.Texture.fromImage('resources/draddet.png');
-  backTile = new PIXI.Sprite(backSprite);
-  backTile.position.x = 0;
-  backTile.position.y = 0;
-  this.stage.addChild(backTile);
+//  var backSprite = PIXI.Texture.fromImage('resources/draddet.png');
+//  backTile = new PIXI.Sprite(backSprite);
+//  backTile.position.x = 0;
+//  backTile.position.y = 0;
+//  this.stage.addChild(backTile);
  
   this.loadSpriteSheet();
 
-  // Render
-  renderer.render(this.stage);
 }
 
 Main.prototype.loadSpriteSheet = function() {
@@ -28,40 +26,15 @@ Main.prototype.loadSpriteSheet = function() {
 }
 
 Main.prototype.spriteSheetLoaded = function() {
-  this.pool = new BoardPiecePool();
-  this.boardTiles = [];
-
   board = new Board();
-//  this.createBoard()
+  pieces = new Pieces();
 
+  requestAnimFrame(this.update.bind(this));
 }
 
-Main.prototype.createBoard = function() {
-  this.borrowTiles(10);
-  renderer.render(this.stage);
-}
-
-Main.prototype.borrowTiles = function(num) {
-  for (var i = 1; i < num; i++) {
-    var sprite = this.pool.borrowTile();
-    sprite.position.x = -32 + (i * 32);
-    sprite.position.y = 128;
-    
-    this.boardTiles.push(sprite);
-
-    this.stage.addChild(sprite);
-  }
+Main.prototype.update = function() {
 
   renderer.render(this.stage);
+  requestAnimFrame(this.update.bind(this));
 }
 
-Main.prototype.returnTiles = function() {
-  for (var i = 1; 1 < this.boardTiles.length; i++) {
-    var sprite = this.boardTiles[i];
-    this.stage.removeChild(sprite);
-    this.pool.returnTile(sprite);
-  }
-
-  this.boardTiles = [];
-
-}
